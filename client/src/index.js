@@ -8,7 +8,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   const addHandler = () => {
-    Axios.get("http://localhost:3000/read")
+    Axios.get("/read")
       .then((res) => {
         console.log(res.data);
         setItems(res.data);
@@ -19,7 +19,7 @@ function App() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3000/read")
+    Axios.get("/read")
       .then((res) => {
         console.log(res.data);
         setItems(res.data);
@@ -30,7 +30,7 @@ function App() {
   }, []);
 
   const addToDb = () => {
-    Axios.post("http://localhost:3000/add", { name: name, height: height });
+    Axios.post("/add", { name: name, height: height });
   };
   return (
     <>
